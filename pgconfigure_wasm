@@ -1,0 +1,24 @@
+#!/bin/sh
+rm -rf postgres
+mkdir postgres
+curl -s -v --retry 5 -L https://github.com/postgres/postgres/archive/refs/tags/REL_15_2.tar.gz | tar xz --strip-components 1 -C postgres
+
+  (cd postgres && CC=emcc CXX=emcc ./configure \
+    --without-llvm        \
+    --without-icu         \
+    --without-tcl         \
+    --without-perl        \
+    --without-python      \
+    --without-gssapi      \
+    --without-pam         \
+    --without-bsd-auth    \
+    --without-ldap        \
+    --without-bonjour     \
+    --without-selinux     \
+    --without-systemd     \
+    --without-readline    \
+    --without-libxml      \
+    --without-libxslt     \
+    --without-zlib        \
+    --without-lz4         \
+    --without-openssl )
