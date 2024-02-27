@@ -33,6 +33,7 @@ endif
 
 #### Configuration for this extension
 EXTENSION_NAME=POSTGRES_SCANNER
+EXT_NAME=postgres_scanner
 EXTENSION_FLAGS=\
 -DDUCKDB_EXTENSION_NAMES="postgres_scanner" \
 -DDUCKDB_EXTENSION_${EXTENSION_NAME}_PATH="$(PROJ_DIR)" \
