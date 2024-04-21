@@ -10,6 +10,10 @@ namespace duckdb {
 
 static bool debug_postgres_print_queries = false;
 
+#ifndef make_shared_ptr
+#define make_shared_ptr make_shared
+#endif
+
 OwnedPostgresConnection::OwnedPostgresConnection(PGconn *conn) : connection(conn) {
 }
 

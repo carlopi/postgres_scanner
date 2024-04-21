@@ -20,6 +20,10 @@
 #include "duckdb/main/connection_manager.hpp"
 #include "duckdb/common/error_data.hpp"
 
+#ifndef make_shared_ptr
+#define make_shared_ptr make_shared
+#endif
+
 using namespace duckdb;
 
 class PostgresExtensionState : public ClientContextState {
