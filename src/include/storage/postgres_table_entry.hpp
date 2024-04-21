@@ -53,7 +53,7 @@ public:
 	void BindUpdateConstraints(LogicalGet &get, LogicalProjection &proj, LogicalUpdate &update,
 	                           ClientContext &context);
 	void BindUpdateConstraints(Binder &binder, LogicalGet &get, LogicalProjection &proj, LogicalUpdate &update,
-	                           ClientContext &context) override;
+	                           ClientContext &context);
 
 	//! Get the copy format (text or binary) that should be used when writing data to this table
 	PostgresCopyFormat GetCopyFormat(ClientContext &context);
