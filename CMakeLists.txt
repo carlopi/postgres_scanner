@@ -33,7 +33,7 @@ include_directories(include postgres/src/include postgres/src/backend
 
 if(WIN32)
   include_directories(postgres/src/include/port/win32 postgres/src/port)
-  if (MINGW)
+  if (NOT MINGW)
              include_directories(postgres/src/include/port/win32_msvc)
 endif()
 endif()
