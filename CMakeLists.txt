@@ -194,7 +194,12 @@ target_include_directories(
   PRIVATE include postgres/src/include postgres/src/backend
           postgres/src/interfaces/libpq ${OPENSSL_INCLUDE_DIR})
 
-if(WIN32)
+if(WIN32 AND MINGW)
+  target_include_directories(
+    ${TARGET_NAME}_loadable_extension
+    PRIVATE postgres/src/include/port/win32 postgres/src/port)
+endif()
+if(WIN32 AND NOT MINGW)
   target_include_directories(
     ${TARGET_NAME}_loadable_extension
     PRIVATE postgres/src/include/port/win32 postgres/src/port
