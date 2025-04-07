@@ -32,8 +32,10 @@ include_directories(include postgres/src/include postgres/src/backend
                     postgres/src/interfaces/libpq ${OPENSSL_INCLUDE_DIR})
 
 if(WIN32)
-  include_directories(postgres/src/include/port/win32 postgres/src/port
-                      postgres/src/include/port/win32_msvc)
+  include_directories(postgres/src/include/port/win32 postgres/src/port)
+  if (MINGW)
+             include_directories(postgres/src/include/port/win32_msvc)
+endif()
 endif()
 
 set(LIBPG_SOURCES
